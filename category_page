@@ -1,0 +1,16 @@
+ def show_categories(self):
+        self.clear_window()
+        tk.Label(self.root, text=f"Welcome, {self.user}!", font=('Arial', 20, 'bold'), bg="#e6f2ff").pack(pady=20)
+        tk.Label(self.root, text="Select Quiz Category", font=('Arial', 16), bg="#e6f2ff").pack(pady=10)
+
+
+        for cat in ["science", "math", "history"]:
+            tk.Button(self.root, text=cat.capitalize(), width=25, height=2, bg="#0073e6", fg="white",
+                      command=lambda c=cat: self.load_questions(c)).pack(pady=5)
+
+
+        tk.Button(self.root, text="Leaderboard", width=25, height=2, bg="#009933", fg="white",
+                  command=self.show_leaderboard).pack(pady=10)
+
+
+        tk.Button(self.root, text="Logout", bg="gray", fg="white", width=10, command=self.build_welcome_screen).pack(pady=10)
